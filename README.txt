@@ -6,7 +6,6 @@ Este proyecto contiene una aplicación web desarrollada en Flask que incluye:
 - Formulario de notas con validación y cálculo de promedio
 - Formulario de nombres con comparación de longitud
 - Estilo CSS personalizado
-- Validaciones y comentarios en el código
 
 Repositorio en GitHub:
-https://github.com/marc7soto/Proyecto_evaluacion3
+https://github.com/marc7soto-web/Proyecto_evaluacion3

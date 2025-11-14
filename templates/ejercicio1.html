@@ -5,8 +5,9 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
+    <!-- Formulario de notas -->
     <h2>Formulario de Notas</h2>
-    {% if error %}<p class="error">{{ error }}</p>{% endif %}
+    {% if error %}<p>{{ error }}</p>{% endif %}
     <form method="POST">
         Nota 1: <input type="number" name="nota1" min="10" max="70" required><br>
         Nota 2: <input type="number" name="nota2" min="10" max="70" required><br>
@@ -14,9 +15,16 @@
         Asistencia (%): <input type="number" name="asistencia" min="0" max="100" required><br>
         <input type="submit" value="Enviar">
     </form>
+
+    <!-- Resultados -->
     {% if resultado %}
         <p>Promedio: {{ promedio }}</p>
         <p>Estado: {{ resultado }}</p>
     {% endif %}
+
+    <!-- Botón para volver al menú principal -->
+    <form action="{{ url_for('index') }}">
+        <button type="submit">Volver al menú principal</button>
+    </form>
 </body>
 </html>

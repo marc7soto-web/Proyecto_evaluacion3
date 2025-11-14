@@ -5,17 +5,25 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
+    <!-- Formulario de nombres -->
     <h2>Formulario de Nombres</h2>
-    {% if error %}<p class="error">{{ error }}</p>{% endif %}
+    {% if error %}<p>{{ error }}</p>{% endif %}
     <form method="POST">
         Nombre 1: <input type="text" name="nombre1" required><br>
         Nombre 2: <input type="text" name="nombre2" required><br>
         Nombre 3: <input type="text" name="nombre3" required><br>
         <input type="submit" value="Enviar">
     </form>
+
+    <!-- Resultados -->
     {% if nombre_largo %}
         <p>El nombre con más caracteres es: <strong>{{ nombre_largo }}</strong></p>
         <p>Tiene {{ cantidad }} caracteres</p>
     {% endif %}
+
+    <!-- Botón para volver al menú principal -->
+    <form action="{{ url_for('index') }}">
+        <button type="submit">Volver al menú principal</button>
+    </form>
 </body>
 </html>

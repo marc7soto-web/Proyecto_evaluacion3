@@ -4,7 +4,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    # Renderiza la página principal con botones a los ejercicios
+    # Página principal con enlaces a los ejercicios y botón de salir
     return render_template('index.html')
 
 @app.route('/ejercicio1', methods=['GET', 'POST'])
@@ -33,6 +33,7 @@ def ejercicio1():
         except ValueError:
             error = "Todos los campos deben ser números válidos."
 
+    # Renderiza la plantilla con resultados o errores
     return render_template('ejercicio1.html', resultado=resultado, promedio=promedio, error=error)
 
 @app.route('/ejercicio2', methods=['GET', 'POST'])
@@ -55,7 +56,13 @@ def ejercicio2():
             nombre_largo = max(nombres, key=len)
             cantidad = len(nombre_largo)
 
+    # Renderiza la plantilla con resultados o errores
     return render_template('ejercicio2.html', nombre_largo=nombre_largo, cantidad=cantidad, error=error)
+
+@app.route('/salir')
+def salir():
+    # Página que ejecuta JavaScript para cerrar la ventana
+    return render_template('salir.html')
 
 if __name__ == '__main__':
     # Ejecuta la aplicación
